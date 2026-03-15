@@ -49,11 +49,11 @@
         <P class="text-neutral/50">Enjoy easy and convenient financial services with us. Cashout charge is low and </P>
 
         <div class="buttons grid grid-cols-3 gap-[16px]">
-            <button class="btn flex-col h-full py-4 btn-primary btn-soft">
+            <button onclick="showOnly('add-Money')" class="btn flex-col h-full py-4 btn-primary btn-soft">
                 <img src="./assets/opt-1.png" alt="">
                 <p>Add Money</p>
             </button>
-            <button class="btn flex-col h-full py-4 btn-primary btn-soft">
+            <button onclick="showOnly('cashout')" class="btn flex-col h-full py-4 btn-primary btn-soft">
                 <img src="./assets/opt-2.png" alt="">
                 <p>Cashout</p>
             </button>
@@ -76,7 +76,69 @@
         </div>
     </section>
 
-    <section id="cashout" class="w-11/12 mx-auto py-5">
+    <section id="add-Money" class="w-11/12 mx-auto py-5 hidden">
+        <h2 class="text-xl font-bold mb-5">Add Money</h2>
+        <div class="card bg-base-100 w-full shadow mx-auto rounded-2xl">
+            <div class="card-body">
+                <fieldset class="fieldset">
+                    <label class="label text-neutral font-bold">Select A Bank</label>
+                    <select id="add-Money-bank" class="select w-full bg-base-200 rounded-full">
+                        <option disabled selected>Select bank</option>
+                        <option value="DBBL">Dutch-Bangla Bank (DBBL)</option>
+                        <option value="IBBL">Islami Bank Bangladesh (IBBL)</option>
+                        <option value="City">City Bank</option>
+                        <option>BRAC Bank</option>
+                        <option>Eastern Bank Limited (EBL)</option>
+                        <option>Standard Chartered Bank</option>
+                        <option>HSBC Bank</option>
+                        <option>Prime Bank</option>
+                        <option>Bank Asia</option>
+                        <option>Mutual Trust Bank (MTB)</option>
+                        <option>United Commercial Bank (UCB)</option>
+                        <option>National Bank</option>
+                        <option>One Bank</option>
+                        <option>Trust Bank</option>
+                        <option>IFIC Bank</option>
+                        <option>NRB Commercial Bank</option>
+                        <option>NRB Bank</option>
+                        <option>Mercantile Bank</option>
+                        <option>Jamuna Bank</option>
+                        <option>Social Islami Bank</option>
+                        <option>Shahjalal Islami Bank</option>
+                        <option>First Security Islami Bank</option>
+                        <option>Al-Arafah Islami Bank</option>
+                        <option>Meghna Bank</option>
+                        <option>Midland Bank</option>
+                        <option>Southeast Bank</option>
+                        <option>Dhaka Bank</option>
+                        <option>Premier Bank</option>
+                        <option>Pubali Bank</option>
+                        <option>Sonali Bank</option>
+                        <option>Janata Bank</option>
+                        <option>Agrani Bank</option>
+                        <option>Rupali Bank</option>
+                    </select>
+                    <br>
+
+                    <label class="label text-neutral font-bold">Bank Account Number</label>
+                    <input id="add-Money-Numbar" maxlength="11" minlength="11" type="number"
+                        class="input rounded-full bg-base-200 w-full" placeholder="Enter 11 digit account number" />
+                    <br>
+                    <label class="label text-neutral font-bold">Amount to Add</label>
+                    <input id="add-Money-ammount" maxlength="11" minlength="11" type="number"
+                        class="input rounded-full bg-base-200 w-full" placeholder="Add Amount to withdraw" />
+                    <br>
+                    <label class="label text-neutral font-bold">Pin Number</label>
+                    <input id="add-Money-Pin" type="password" class="input rounded-full bg-base-200 w-full"
+                        placeholder="Enter 4 digit pin number" />
+                    <!-- <div><a class="link link-hover">Forgot password?</a></div> -->
+                    <button id="btn-add-money" class="btn btn-primary rounded-full mt-4">Add Money</button>
+                </fieldset>
+            </div>
+        </div>
+    </section>
+
+    <section id="cashout" class="w-11/12 mx-auto py-5 hidden">
         <h2 class="text-xl font-bold mb-5">Cash Out</h2>
         <div class="card bg-base-100 w-full shadow mx-auto rounded-2xl">
             <div class="card-body">
@@ -99,6 +161,7 @@
         </div>
     </section>
     <script src="./script/mashing.js"></script>
+    <script src="./script/addmoney.js"></script>
     <script src="./script/cashout.js"></script>
 </body>
 

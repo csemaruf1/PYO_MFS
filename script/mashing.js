@@ -7,3 +7,27 @@ function getValuFromInput(id) {
     console.log(valu);
     return valu;
 }
+
+function getBalance() {
+    const balanceElemant = document.getElementById('balance');
+    const balance = balanceElemant.innerText;
+    return Number(balance);
+}
+
+function setBalance(value) {
+    const balanceElemant = document.getElementById('balance');
+    balanceElemant.innerText = value;
+}
+
+function showOnly(id){
+    const addMoney = document.getElementById('add-Money');
+    const cashout = document.getElementById('cashout');
+    
+    addMoney.classList.add("hidden");
+    cashout.classList.add("hidden");
+
+
+    const selected = document.getElementById(id)
+    selected.classList.remove("hidden");
+}
+
