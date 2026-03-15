@@ -1,7 +1,7 @@
 document.getElementById('btn-cashout').addEventListener('click', function () {
     const cashoutNambar = getValuFromInput('cashout-numbar');
     // console.log(cashoutNambar);
-    if(cashoutNambar.length != 11){
+    if (cashoutNambar.length != 11) {
         alert("Invalid Agent Numbar");
         return;
     }
@@ -12,18 +12,27 @@ document.getElementById('btn-cashout').addEventListener('click', function () {
     // calculat
     const newBalance = currentBalance - Number(cashoutAmount);
     // console.log(newBalance);
-    if(newBalance < 0){
+    if (newBalance < 0) {
         alert("Invalid Amount!")
         return;
     }
 
     //pin
     const pin = getValuFromInput("chshout-pin");
-    if(pin === '1234'){
+    if (pin === '1234') {
         alert('cashout successful');
         setBalance(newBalance);
+
+        const history = document.getElementById('History-container');
+        const newHistory = document.createElement("div");
+        newHistory.innerHTML = `
+            <div class="transation-card p-5 bg-base-100">
+                CashOut ${cashoutAmount} TK Success to
+                ${cashoutNambar}, at ${new Date()}
+            </div>`;
+        history.append(newHistory);
     }
-    else{
+    else {
         alert('Invalid PIN!');
         return;
     }

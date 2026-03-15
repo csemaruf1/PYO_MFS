@@ -57,11 +57,11 @@
                 <img src="./assets/opt-2.png" alt="">
                 <p>Cashout</p>
             </button>
-            <button class="btn flex-col h-full py-4 btn-primary btn-soft">
+            <button onclick="showOnly('Transfer-money')" class="btn flex-col h-full py-4 btn-primary btn-soft">
                 <img src="./assets/opt-3.png" alt="">
                 <p>Transfer Money</p>
             </button>
-            <button class="btn flex-col h-full py-4 btn-primary btn-soft">
+            <button onclick="showOnly('Get-Bonus')" class="btn flex-col h-full py-4 btn-primary btn-soft">
                 <img src="./assets/opt-4.png" alt="">
                 <p>Get Bonus</p>
             </button>
@@ -69,7 +69,7 @@
                 <img src="./assets/opt-5.png" alt="">
                 <p>Pay Bill</p>
             </button>
-            <button class="btn flex-col h-full py-4 btn-primary btn-soft">
+            <button onclick="showOnly('Transactions')" class="btn flex-col h-full py-4 btn-primary btn-soft">
                 <img src="./assets/opt-6.png" alt="">
                 <p>Transactions</p>
             </button>
@@ -138,6 +138,7 @@
         </div>
     </section>
 
+
     <section id="cashout" class="w-11/12 mx-auto py-5 hidden">
         <h2 class="text-xl font-bold mb-5">Cash Out</h2>
         <div class="card bg-base-100 w-full shadow mx-auto rounded-2xl">
@@ -160,9 +161,56 @@
             </div>
         </div>
     </section>
+
+    <section id="Transfer-money" class="w-11/12 mx-auto py-5 hidden">
+        <h2 class="text-xl font-bold mb-5">Transfer Money</h2>
+        <div class="card bg-base-100 w-full shadow mx-auto rounded-2xl">
+            <div class="card-body">
+                <fieldset class="fieldset">
+                    <label class="label text-neutral font-bold">User Account Number</label>
+                    <input id="transfer-numbar" maxlength="11" minlength="11" type="number"
+                        class="input rounded-full bg-base-200 w-full" placeholder="Enter 11 digit number" />
+                    <br>
+                    <label class="label text-neutral font-bold">Amount</label>
+                    <input id="tranasfer-amount-numbar" maxlength="11" minlength="11" type="number"
+                        class="input rounded-full bg-base-200 w-full" placeholder="Enter amount to transfer" />
+                    <br>
+                    <label class="label text-neutral font-bold">Pin Number</label>
+                    <input id="transfer-pin" type="password" class="input rounded-full bg-base-200 w-full"
+                        placeholder="Enter 4 digit pin number" />
+                    <!-- <div><a class="link link-hover">Forgot password?</a></div> -->
+                    <button id="btn-sent" class="btn btn-primary rounded-full mt-4">Send Now</button>
+                </fieldset>
+            </div>
+        </div>
+
+    </section>
+
+    <section id="Get-Bonus" class="w-11/12 mx-auto py-5 hidden">
+        <h2 class="text-xl font-bold mb-5">Get Bonus</h2>
+        <div class="card bg-base-100 w-full shadow mx-auto rounded-2xl">
+            <div class="card-body">
+                <fieldset class="fieldset">
+                    <label class="label text-neutral font-bold">Enter Bonus Coupon</label>
+                    <input id="coupon" maxlength="11" minlength="11" type="number"
+                        class="input rounded-full bg-base-200 w-full" placeholder="Enter your coupon" />
+                    <br>
+                    <button id="btn-coupon" class="btn btn-primary rounded-full mt-4">Get Bonus</button>
+                </fieldset>
+            </div>
+        </div>
+    </section>
+
+    <section id="Transactions" class="w-11/12 mx-auto py-5 ">
+        <h2 class="text-xl font-bold mb-5">Transaction History</h2>
+        <div class="space-y-5" id="History-container">
+
+        </div>
+    </section>
     <script src="./script/mashing.js"></script>
     <script src="./script/addmoney.js"></script>
     <script src="./script/cashout.js"></script>
+    <script src="./script/transfer_money.js"></script>
 </body>
 
 </html>
