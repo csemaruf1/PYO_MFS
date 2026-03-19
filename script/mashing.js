@@ -24,6 +24,7 @@ function showOnly(id){
     const cashout = document.getElementById('cashout');
     const transfer = document.getElementById('Transfer-money');
     const bonus = document.getElementById("Get-Bonus");
+    const billPay = document.getElementById('Pay-Bill');
     const history = document.getElementById('Transactions');
     
     
@@ -31,6 +32,7 @@ function showOnly(id){
     cashout.classList.add("hidden");
     transfer.classList.add("hidden");
     bonus.classList.add('hidden');
+    billPay.classList.add('hidden');
     history.classList.add('hidden');
 
 
